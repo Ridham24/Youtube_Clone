@@ -12,7 +12,7 @@ const Navbar = () => {
       sx={{ position: 'sticky', background: '#000' }}
     >
       <Link to="/">
-        <YouTubeIcon sx={{ color: 'red', fontSize: '50px' }} />
+        <YouTubeIcon sx={{ color: 'red', fontSize: '50px' }} className='yt_icon' />
       </Link>
       <SearchBar/>
     </Stack>

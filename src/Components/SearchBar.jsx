@@ -5,7 +5,7 @@ const SearchBar = () => {
   const [text, setText] = useState('')
   console.log(text);
   return (
-    <Paper component="form" sx={{ borderRadius: 20, height: 35, width: 350 }}>
+    <Paper component="form" sx={{ borderRadius: 20, height: 35, width: 350}}>
       <input
         placeholder='Search...'
         className="search-bar"
