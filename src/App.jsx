@@ -11,7 +11,6 @@ import Search from './Components/Search'
 function App() {
   return (
     <BrowserRouter>
-      <div>
         <Navbar />
         <Routes>
           <Route path="/" element={<Feed />} />
@@ -19,7 +18,6 @@ function App() {
           <Route path="/channel/:id" element={<ChannelDetails />} />
           <Route path="/search/:searchTerm" element={<Search />} />
         </Routes>
-      </div>
     </BrowserRouter>
   )
 }

@@ -33,8 +33,8 @@ const categories = [
   { name: 'Gym', icon: <FitnessCenter /> },
   { name: 'Crypto', icon: <DeveloperMode /> },
 ]
-const Sidebar = () => {
-  const [selected,setSelected]=useState('New')
+const Sidebar = ({selectedCategory,setSelectedCategory}) => {
+  const [selected,setSelected]=useState(selectedCategory)
   return (
     <Stack
       sx={{
@@ -46,6 +46,10 @@ const Sidebar = () => {
       {categories.map((box) => (
         <button
           className="category-btn"
+          onClick={() => {
+            setSelectedCategory(box.name)
+            setSelected(box.name)
+          }}
           style={{
             backgroundColor: box.name === selected && '#fc1503'
           }}
