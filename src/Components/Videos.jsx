@@ -3,18 +3,17 @@ import VideoCard from './VideoCard'
 import ChannelCard from './ChannelCard'
 import React from "react"
 const Videos = ({ videos }) => {
+    console.log(videos);
   return (
-      <div>
-          <Stack flexWrap='wrap' direction='row' gap={2} justifyContent='start'>
-              {
-                  videos.map((video, ind) => (
-                      <Box>
-                          {video.id.videoId&&<VideoCard videoDetail={video}/>}
-                          {video.id.channelId&&<ChannelCard channelDetail={video}/>}
-                          </Box>
-                  ))
-              }
-          </Stack>
+    <div>
+      <Stack flexWrap="wrap" direction="row" gap={2} justifyContent="start">
+        {videos.map((video, ind) => (
+          <Box>
+            {!video.id.channelId && <VideoCard videoDetail={video} />}
+            {video.id.channelId && <ChannelCard channelDetail={video} />}
+          </Box>
+        ))}
+      </Stack>
     </div>
   )
 }

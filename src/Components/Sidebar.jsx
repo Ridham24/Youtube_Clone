@@ -19,7 +19,7 @@ const categories = [
   { name: 'New', icon: <Home /> },
   { name: 'Coding', icon: <Code/> },
   { name: 'ReactJS', icon: <Code /> },
-  { name: 'NextJS', icon: <Code /> },
+  { name: 'SRK', icon: <Code /> },
   { name: 'Music', icon: <MusicNote /> },
   { name: 'Education', icon: <School /> },
   { name: 'Podcast', icon: <GraphicEq /> },
