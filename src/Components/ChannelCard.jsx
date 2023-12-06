@@ -1,9 +1,10 @@
-import { Box, CardContent, CardMedia, Typography } from "@mui/material"
-import {Link} from 'react-router-dom'
+import { Box, CardContent, CardMedia, Typography } from '@mui/material'
+import { Link } from 'react-router-dom'
 import CheckCircle from '@mui/icons-material/CheckCircle'
-const demoProfilePicture = 'http://dergipark.org.tr/assets/app/images/buddy_sample.png'
+const demoProfilePicture =
+  'http://dergipark.org.tr/assets/app/images/buddy_sample.png'
 const demoChannelUrl = '/channel/UCmXmlB4-HJytD7wek0Uo97A'
-const ChannelCard = ({channelDetail}) => {
+const ChannelCard = ({ channelDetail }) => {
   return (
     <Box
       sx={{
@@ -14,9 +15,10 @@ const ChannelCard = ({channelDetail}) => {
         alignItems: 'center',
         borderRadius: 0,
         borderWidth: 0,
+        margin: 'auto',
       }}
     >
-      <Link to={`/channel/${channelDetail?.id?.channelId||demoChannelUrl}`}>
+      <Link to={`/channel/${channelDetail?.id?.channelId || demoChannelUrl}`}>
         <CardContent
           sx={{
             display: 'flex',
@@ -43,6 +45,14 @@ const ChannelCard = ({channelDetail}) => {
             {channelDetail?.snippet?.title}
             <CheckCircle sx={{ fontSize: 12 }} />
           </Typography>
+          {channelDetail?.statistics?.subscriberCount && (
+            <Typography sx={{ color: '#fff' }}>
+              {parseInt(
+                channelDetail?.statistics?.subscriberCount
+              ).toLocaleString()}{' '}
+              Subscribers
+            </Typography>
+          )}
         </CardContent>
       </Link>
     </Box>
