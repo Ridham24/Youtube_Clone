@@ -4,7 +4,7 @@ import CheckCircle from '@mui/icons-material/CheckCircle'
 const demoProfilePicture =
   'http://dergipark.org.tr/assets/app/images/buddy_sample.png'
 const demoChannelUrl = '/channel/UCmXmlB4-HJytD7wek0Uo97A'
-const ChannelCard = ({ channelDetail }) => {
+const ChannelCard = ({ channelDetail,marginTop }) => {
   return (
     <Box
       sx={{
@@ -16,6 +16,7 @@ const ChannelCard = ({ channelDetail }) => {
         borderRadius: 0,
         borderWidth: 0,
         margin: 'auto',
+        marginTop
       }}
     >
       <Link to={`/channel/${channelDetail?.id?.channelId || demoChannelUrl}`}>
