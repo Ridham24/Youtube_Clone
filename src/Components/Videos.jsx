@@ -3,7 +3,7 @@ import VideoCard from './VideoCard'
 import ChannelCard from './ChannelCard'
 import Loader from './Loader'
 import React from 'react'
-const Videos = ({ videos, Load }) => {
+const Videos = ({ videos, Load ,flag}) => {
   console.log(videos)
   if (Load) return <Loader />
   return (
@@ -17,7 +17,7 @@ const Videos = ({ videos, Load }) => {
         {videos.map((video, ind) => (
           <Box key={ind}>
             {!video.id.channelId && <VideoCard videoDetail={video} />}
-            {video.id.channelId && <ChannelCard channelDetail={video} />}
+            {!flag&&video.id.channelId && <ChannelCard channelDetail={video} />}
           </Box>
         ))}
       </Stack>

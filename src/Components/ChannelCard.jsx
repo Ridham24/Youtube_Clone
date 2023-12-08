@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom'
 import CheckCircle from '@mui/icons-material/CheckCircle'
 const demoProfilePicture =
   'http://dergipark.org.tr/assets/app/images/buddy_sample.png'
-const demoChannelUrl = '/channel/UCmXmlB4-HJytD7wek0Uo97A'
-const ChannelCard = ({ channelDetail,marginTop }) => {
+const demoChannelUrl = 'UCmXmlB4-HJytD7wek0Uo97A'
+const ChannelCard = ({ channelDetail, marginTop }) => {
+  console.log(channelDetail);
   return (
     <Box
       sx={{
@@ -19,7 +20,7 @@ const ChannelCard = ({ channelDetail,marginTop }) => {
         marginTop
       }}
     >
-      <Link to={`/channel/${channelDetail?.id?.channelId || demoChannelUrl}`}>
+      <Link to={`/channel/${channelDetail?.snippet?.channelId || channelDetail?.id}`}>
         <CardContent
           sx={{
             display: 'flex',

@@ -2,11 +2,11 @@ import { Card, CardContent, CardMedia, Typography } from "@mui/material"
 import { Link } from "react-router-dom"
 import CheckCircle from '@mui/icons-material/CheckCircle'
 const demoThumbnailUrl = 'https://i.ibb.co/G2L2Gwp/API-Course.png';
-const demoChannelUrl = '/channel/UCmXmlB4-HJytD7wek0Uo97A';
-const demoVideoUrl = '/video/GDa8kZLNhJ4';
+const demoChannelUrl = '/UCmXmlB4-HJytD7wek0Uo97A';
+const demoVideoUrl = '/GDa8kZLNhJ4';
 const demoChannelTitle = 'Ridham Goel';
 const demoVideoTitle = 'Cant render Image';
-const VideoCard = ({ videoDetail}) => {
+const VideoCard = ({ videoDetail }) => {
   return (
     <Card
       sx={{
@@ -34,7 +34,7 @@ const VideoCard = ({ videoDetail}) => {
             {videoDetail?.snippet?.title.slice(0, 60) || demoVideoTitle}
           </Typography>
         </Link>
-        <Link to={`/video/${videoDetail?.id?.channelId || demoChannelUrl}`}>
+        <Link to={`/channel/${videoDetail?.snippet?.channelId || demoChannelUrl}`}>
           <Typography
             variant="subtitle2"
             sx={{ color: 'gray', fontWeight: 'bold' }}
